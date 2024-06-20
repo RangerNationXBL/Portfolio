@@ -229,25 +229,10 @@ class ID3DecisionTreeVisualizer(ID3DecisionTree):
         canvas.create_text(x, y, text=root, fill="black", font=custom_font)
         if parent:
             canvas.create_line(parent[0], parent[1], x, y, arrow=tk.LAST)
-            canvas.create_text(
-                (parent[0] + x) / 2,
-                (parent[1] + y) / 2,
-                text=parent_text,
-                fill="black",
-                font=custom_font,
-            )
+            canvas.create_text((parent[0] + x) / 2, (parent[1] + y) / 2, text=parent_text, fill="black", font=custom_font,)
 
         for i, (key, value) in enumerate(children.items()):
-            self.draw_tree(
-                value,
-                canvas,
-                x - dx + i * (dx // len(children)),
-                y + dy,
-                dx // 2,
-                dy,
-                (x, y),
-                key,
-            )
+            self.draw_tree(value, canvas, x - dx + i * (dx // len(children)), y + dy, dx // 2, dy, (x, y), key,)
 
 
 # Read the training and test data
