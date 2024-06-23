@@ -2,25 +2,26 @@
 import numpy as np
 from collections import Counter
 
-def euclidean_distance(x1, x2):
+def euclidean_distance(x1: float, x2: float) -> float:
     """ 
         Compute the distance by first finding the distance between two points,
         squaring each difference, summing these squares, and the taking the square
-        root of sum. 
+        root of sum.
     """
     distance = np.sqrt(np.sum((x1 - x2) ** 2))
     return distance
 
 class KNN:
-    def __init__(self, k=3):
+    def __init__(self, k=3) -> None:
         self.k = k
 
-    def fit(self, X, y):
+    def fit(self, X: list[float], y: list[int]) -> None:
+        print(f"x {X}: y: {y}")
         """ This method is used to fit the model with training data. """
         self.x_train = X
         self.y_train = y
 
-    def predict(self, X):
+    def predict(self, X: list[float]) ->list[int]:
         """ 
             This method predicts the class labels for the input data 'X'. 
             Then returns the predictions
@@ -36,6 +37,7 @@ class KNN:
             a list of distances. 
         """
         distances = [euclidean_distance(x, x_train) for x_train in self.x_train]
+
 
         # Get the closest K
         """ This sorts the distances and gets the indices of the 'k' nearest neighbors """
