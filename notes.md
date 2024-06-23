@@ -64,3 +64,13 @@ I have moved some items to this git hub from class work, and educational work th
 2. Regression problems use a similar concept as classification problem, but in this case, the average k nearest neighbors is taken to make the prediction about a classification. The main distinction here is that classification is used for discrete values, whereas regression is used with continuious ones.
 
 
+#### Decision Tree
+
+Decision tree is a classifier of data,
+
+1. Equations:  
+   1. Information Gain = Entropy(parent) - [weighted average] * entropy(children)
+        1. measures the level of impurity in a group of examples
+        2. Entropy is a common way to measure the impurities in a provided group.
+    2. Entropy =
+    3. classification = 
